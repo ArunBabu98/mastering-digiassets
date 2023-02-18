@@ -1,0 +1,16 @@
+{
+  "name": "mastering-digiassets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "ipfs": "node ipfs"
+  },
+  "author": "Renzo Diaz",
+  "license": "ISC",
+  "dependencies": {
+    "digibyte-js": "^1.4.2",
+    "ipfs-http-client": "^60.0.0"
+  }
+}
