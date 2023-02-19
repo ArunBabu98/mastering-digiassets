@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "ipfs": "node ipfs"
+    "ipfs": "node ipfs",
+    "aws": "node aws"
   },
   "author": "Renzo Diaz",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.1318.0",
     "digibyte-js": "^1.4.2",
     "ipfs-http-client": "^60.0.0"
   }

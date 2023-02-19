@@ -1,30 +1,21 @@
 const digibyte = require('digibyte-js');
-const MetaData = require('digibyte-js/lib/digiassets/metadata');
-const AssetIssuer = require('digibyte-js/lib/digiassets/issuer');
+const AssetTrasnferor = require('digibyte-js/lib/digiassets/trasferor');
 
 // D5ASn4qEgHJkiVzFZCMfa8VkyP1exsoQH8
 // KyxqjtX4948dJFh5Fc5fbvY8a2hkgCFu48qGHcLunGVjDCRE3PcU
 
 var utxo = [
     {
-        txid: "3dfbcab4d5326c5da2619eb40c2a408c97a741966d2662ef8832510787bbf5e2",
-        vout: 1,
-        satoshis: 600,
-        scriptPubKey: "76a91400414f52cf4b3c34b516b0022436e6b96d57480488ac"
-    },
-    {
-        txid: "3dfbcab4d5326c5da2619eb40c2a408c97a741966d2662ef8832510787bbf5e2",
-        vout: 3,
-        satoshis: 1996786,
-        scriptPubKey: "76a91400414f52cf4b3c34b516b0022436e6b96d57480488ac"
-    },
-    {
-        txid: "ae4df4e174caff8f9b2fe01ed5a910507f0c0f2403314c8b52c039babe48678e",
-        vout: 1,
-        satoshis: 600,
-        scriptPubKey: "76a91400414f52cf4b3c34b516b0022436e6b96d57480488ac"
+        "txid":"07a67323f82d75b6fe41cc5a70917277a6d522ecc865f15bcec9cf988c4f0fee",
+        "vout":2,
+        "satoshis":1994275,
+        "scriptPubKey":"76a91400414f52cf4b3c34b516b0022436e6b96d57480488ac"
     }
 ];
+
+/* ------------ ISSUER ------------ 
+const MetaData = require('digibyte-js/lib/digiassets/metadata');
+const AssetIssuer = require('digibyte-js/lib/digiassets/issuer');
 
 var meta = new MetaData()
     .name("Rabbit Coin")
@@ -43,3 +34,14 @@ var issuer = new AssetIssuer(meta)
     .build();
 
 console.log(meta.toString());
+*/
+
+var trasferor = new AssetTrasnferor()
+    .addInput(utxo)
+    .addOutput("DDKFFfR5NnfbLYbWkWE65CLqjfZxUCQwoR", 50)
+    .burnExtra(true)
+    .setGasChange("D5ASn4qEgHJkiVzFZCMfa8VkyP1exsoQH8")
+    .sign("KyxqjtX4948dJFh5Fc5fbvY8a2hkgCFu48qGHcLunGVjDCRE3PcU")
+    .build();
+
+console.log(trasferor)
