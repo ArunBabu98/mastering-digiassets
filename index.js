@@ -13,7 +13,7 @@ var utxo = [
     }
 ];
 
-/* ------------ ISSUER ------------ 
+// ------------ ISSUER ------------ 
 const MetaData = require('digibyte-js/lib/digiassets/metadata');
 const AssetIssuer = require('digibyte-js/lib/digiassets/issuer');
 
@@ -27,15 +27,16 @@ var meta = new MetaData()
 
 var issuer = new AssetIssuer(meta)
     .addGas(utxo[0])
-    .addOutput("DDKFFfR5NnfbLYbWkWE65CLqjfZxUCQwoR", 800)
-    .addOutput("D5ASn4qEgHJkiVzFZCMfa8VkyP1exsoQH8", 200)
+    .addOutput("D5ASn4qEgHJkiVzFZCMfa8VkyP1exsoQH8", 1000)
+    .addOutput("D5ASn4qEgHJkiVzFZCMfa8VkyP1exsoQH8", 1000)
     .setGasChange("D5ASn4qEgHJkiVzFZCMfa8VkyP1exsoQH8")
     .sign("KyxqjtX4948dJFh5Fc5fbvY8a2hkgCFu48qGHcLunGVjDCRE3PcU")
     .build();
 
-console.log(meta.toString());
-*/
+console.log(issuer);
 
+
+// ------------ ISSUER ------------ 
 var trasferor = new AssetTrasnferor()
     .addInput(utxo)
     .addOutput("DDKFFfR5NnfbLYbWkWE65CLqjfZxUCQwoR", 50)
